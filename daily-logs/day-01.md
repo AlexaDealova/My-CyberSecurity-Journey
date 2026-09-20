@@ -1,0 +1,30 @@
+# Day 1 — Networking Fundamentals + First Wireshark Capture
+
+- **Date:** 2026-09-20
+- **Learning Goal:** Build enough networking fundamentals to understand a Wireshark packet capture, then perform my first real capture.
+- **Fundamental Studied:**
+  - IP addressing (private vs. public)
+  - DNS resolution
+  - Protocols & ports (HTTP/80, HTTPS/443, DNS/53, SSH/22, RDP/3389)
+  - TCP vs UDP, including the 3-way handshake
+  - OSI model (Layers 2, 3, 4, 7)
+  - MAC address vs. IP address
+  - ARP and ARP spoofing (conceptual)
+- **Lab Progress:** [Lab 1 — Wireshark Basic Packet Capture](../labs/lab01-wireshark-basic-capture/README.md) — core objectives completed
+- **Tools Used:** Wireshark (native Windows install)
+- **Commands/Actions Practiced:**
+  - Applying display filters: `ip.addr == x.x.x.x`, `http`
+  - Follow → HTTP Stream / Follow → TCP Stream
+- **What I Understood:**
+  - How DNS resolves a domain to an IP before any connection starts
+  - What a TCP 3-way handshake looks like in real captured packets
+  - Why HTTP traffic is fully readable while HTTPS/TLS traffic is not, except for the SNI field
+- **What I Found Difficult:**
+  - Distinguishing TCP vs UDP conceptually at first, and understanding why some "live" traffic (e.g. YouTube) still uses TCP despite intuition suggesting otherwise
+  - Remembering the 7 OSI layers and which protocols map to which layer
+- **Questions Raised (and resolved during the session):**
+  - Why does MAC address exist if IP address already identifies a device?
+  - Why is SNI still readable in an encrypted TLS stream?
+  - Why did the browser query both `wikipedia.org` and `www.wikipedia.org`?
+- **Evidence Collected:** 7 screenshots in `labs/lab01-wireshark-basic-capture/screenshots/`
+- **Next Step:** Optional Lab 1 extensions (Protocol Hierarchy statistics, TCP RST behavior, QUIC traffic, live ARP request) or proceed to Lab 2 (Linux Log Investigation).

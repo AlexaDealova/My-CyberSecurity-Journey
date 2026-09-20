@@ -1,0 +1,16 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+*.swp
+
+# Raw packet capture files - review manually before ever committing any of these,
+# they can contain far more sensitive data than a screenshot does
+*.pcap
+*.pcapng
+
+# Anything explicitly marked private/draft
+*_private.*
+drafts/
