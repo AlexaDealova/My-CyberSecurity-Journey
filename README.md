@@ -38,4 +38,4 @@ This repo will move slowly at times, and that's intentional. I'd rather document
 
 ## Contact
 
-Feel free to connect on [LinkedIn] — link to be added.
+Feel free to connect on www.linkedin.com/in/alexa-alfito-dealova
