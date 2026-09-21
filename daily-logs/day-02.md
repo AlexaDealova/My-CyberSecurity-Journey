@@ -1,0 +1,35 @@
+# Day 2 — Linux Command-Line Practice via OverTheWire Bandit
+
+- **Date:** 2026-09-21
+- **Learning Goal:** Reinforce Linux command-line fundamentals through hands-on practice, outside the main lab roadmap — specifically, learning to verify a hypothesis with evidence rather than jumping straight to an answer.
+- **Fundamental Studied:**
+  - Filtering multiple files by content type instead of inspecting each one manually (`file` + `grep`)
+  - Hidden files (dotfiles) and why wildcards skip them by default
+  - Combining `find` predicates: `-size`, `! -executable`, `-user`, `-group`
+  - Filesystem root (`/`) vs. relative paths (`.`, `..`, `./`)
+  - Redirecting stderr to suppress expected "Permission denied" noise (`2>/dev/null`)
+  - `cd` vs. `cat` (entering a directory vs. reading a file)
+  - Correct `grep` argument order (one pattern, then a filename — not two patterns)
+- **Lab Progress:** [OverTheWire Bandit](../notes/overthewire-bandit.md) — levels 0 through 7 completed (0–3 reviewed from prior coursework; levels 4, 5, 6, and 7 fully verified and documented this session, including mistakes made along the way).
+- **Tools Used:** SSH terminal (Bandit game server)
+- **Commands Practiced:**
+  - `file ./-file* | grep ASCII`
+  - `find . -type f -size 1033c`, `find . -type f ! -executable`, `find . -type f -exec file {} \; | grep ASCII`
+  - `find / -user bandit7 -group bandit6 -size 33c 2>/dev/null`
+  - `grep millionth data.txt`
+- **What I Understood:**
+  - Verifying each clue in a challenge independently (rather than guessing from one command) is more rigorous and mirrors real investigative work.
+  - Why bash wildcards silently skip hidden dotfiles, and why that's a deliberate safety feature, not a bug.
+  - The difference between relative paths (`.`, `..`, `./`) and absolute paths starting from `/`.
+  - Why "Permission denied" spam during a system-wide search is expected, not an error to fix.
+  - `grep`'s argument order: one pattern, then a file — not multiple search terms.
+- **What I Found Difficult:**
+  - Initially confused `cd` (enter a directory) with `cat` (read a file's contents).
+  - Mixed up relative vs. absolute paths when trying to access a file `find` had already located.
+  - Misunderstood how many arguments `grep` accepts and what each one means.
+- **Questions Raised (and resolved during the session):**
+  - Why does `ls` sometimes not show all files in a folder? → hidden dotfiles.
+  - What do the different colors in a colorized `ls` listing mean? → blue = directory, cyan = symlink, white/default = regular file; confirmed against `ls -l`'s leading character (`d`, `l`, `-`).
+  - Why doesn't a combined `find` command feel like "guessing"? → because each predicate independently verifies one stated clue; when the intersection is unique, it's a proof, not a guess.
+- **Evidence Collected:** Terminal screenshots for levels 4–7 (passwords redacted before any public sharing).
+- **Next Step:** Continue Bandit from level 8, or return to the main Wireshark lab roadmap.

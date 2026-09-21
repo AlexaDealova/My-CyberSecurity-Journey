@@ -22,6 +22,10 @@ soc-analyst-journey/
 |---|-----|--------|------------|
 | 1 | [Wireshark Basic Packet Capture](labs/lab01-wireshark-basic-capture/README.md) | Core objectives complete | DNS resolution, TCP 3-way handshake, HTTP vs HTTPS traffic analysis |
 
+## Extra Practice
+
+- [OverTheWire: Bandit](notes/overthewire-bandit.md) — side practice on Linux command-line fundamentals (levels 0–4 so far), outside the main lab roadmap.
+
 ## Fundamentals Covered So Far
 
 - IP addressing (private vs public)
@@ -38,4 +42,4 @@ This repo will move slowly at times, and that's intentional. I'd rather document
 
 ## Contact
 
-Feel free to connect on www.linkedin.com/in/alexa-alfito-dealova
+Feel free to connect on [LinkedIn] — link to be added.
