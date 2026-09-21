@@ -1,4 +1,4 @@
-# SOC Analyst Learning Journey
+# Cyber Security Journey
 
 Documenting my journey from zero prior knowledge to (eventually) a Junior SOC Analyst role. Everything in this repository reflects work I have actually completed — no fabricated results, no skills claimed before they're demonstrated.
 
@@ -9,7 +9,7 @@ I'm learning Cyber Security from scratch with the goal of becoming a **SOC (Secu
 ## Structure
 
 ```
-soc-analyst-journey/
+My-CyberSecurity-Journey/
 ├── daily-logs/          # Short logs for each study session (even without a full lab)
 ├── labs/                 # One folder per hands-on lab, each with its own README + screenshots
 │   └── lab01-wireshark-basic-capture/
@@ -42,4 +42,4 @@ This repo will move slowly at times, and that's intentional. I'd rather document
 
 ## Contact
 
-Feel free to connect on [LinkedIn] — link to be added.
+Feel free to connect on www.linkedin.com/in/alexa-alfito-dealova.
