@@ -1,0 +1,40 @@
+# Day 3 — Linux Log Investigation (Lab 2)
+
+- **Date:** 2026-09-22
+- **Learning Goal:** Learn what a log file is from zero, then move to hands-on: install and configure an SSH server on my own WSL, generate real log data, and investigate a realistic multi-attacker scenario.
+- **Fundamental Studied:**
+  - What a log file is, and where Linux actually stores it (`/var/log/`, plain text, regular disk — not ROM)
+  - Log rotation (`logrotate`) and typical retention windows
+  - Why centralized/SIEM logging matters: capacity limits **and** tamper-resistance (an attacker with host access could otherwise delete local evidence)
+  - Anatomy of a log line: timestamp, hostname, process/PID, message
+  - Reading tools by context: `tail`/`tail -f` (recent/live), `less` (search within large files), `cat` (only for small files)
+  - Filtering with `grep`, chaining filters with `|`
+  - Counting with `wc -l`, and reasoning about rate/velocity vs. raw totals (including "low and slow" evasion)
+  - Incident Response lifecycle (Identification → Containment → Eradication → Recovery → Lessons Learned)
+  - Defense in depth (e.g., disabling direct root SSH login as a second barrier)
+- **Lab Progress:** [Lab 2 — Linux Log Investigation](../labs/lab02-linux-log-investigation/README.md) — core objectives complete
+- **Tools Used:** WSL2 (Ubuntu 26.04.1 LTS), `openssh-server` (installed fresh this session)
+- **Commands Practiced:**
+  - `cat /etc/os-release`, `dpkg -l | grep openssh-server`
+  - `sudo apt update`, `sudo apt install openssh-server -y`
+  - `sudo service ssh status`, `sudo systemctl start ssh`
+  - `ssh alek@localhost` (deliberate failed logins to generate real log data)
+  - `sudo tail -20 /var/log/auth.log`
+  - `sudo grep "Failed password" /var/log/auth.log | wc -l`
+  - `tail ~/lab2-sample-auth.log`, `cat ~/lab2-sample-auth.log`
+  - `grep "Accepted password" ~/lab2-sample-auth.log`
+- **What I Understood:**
+  - The difference between total count and rate/velocity when judging whether login failures are suspicious.
+  - Why relying only on local logs is risky, tied directly to evidence I generated myself (the same `sudo` access I used to read logs is the level of access an attacker who compromises root would also have).
+  - How to isolate the single most useful signal (`Accepted password`) instead of reading every line manually.
+  - That real log format varies by system (my own WSL used `systemd`-style timestamps and `sshd-session`, different from the generic textbook example) but the underlying fields stay the same.
+  - The IR lifecycle doesn't stop at "found it" — Containment, Eradication, Recovery, and Lessons Learned all follow.
+- **What I Found Difficult:**
+  - Initially thought log files were stored in ROM rather than regular disk with a retention policy.
+  - First instinct was to use `tail` on the synthetic log file, which silently missed the earliest events — self-corrected to `cat` after recognizing the file was small.
+  - First guess for isolating a successful login was filtering by IP, before recognizing the suspicious IP isn't known ahead of time — the status keyword (`Accepted password`) was the right filter instead.
+- **Questions Raised (and resolved during the session):**
+  - Why don't companies just rely on the log stored on the server itself? → capacity limits, and more importantly, tamper-resistance against a compromised host.
+  - What would change if direct root SSH login were disabled? → attack becomes harder, not impossible (defense in depth: attacker must compromise a regular user first, then escalate via `sudo` — which is itself logged separately).
+- **Evidence Collected:** 8 terminal screenshots in `labs/lab02-linux-log-investigation/screenshots/` — real SSH setup/failed-login evidence from my own WSL, plus the synthetic multi-actor investigation.
+- **Next Step:** Possible follow-up: practice actual containment steps (e.g., a real firewall rule blocking an IP on WSL), or move to a new lab topic.

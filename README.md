@@ -21,6 +21,7 @@ soc-analyst-journey/
 | # | Lab | Status | Key Skills |
 |---|-----|--------|------------|
 | 1 | [Wireshark Basic Packet Capture](labs/lab01-wireshark-basic-capture/README.md) | Core objectives complete | DNS resolution, TCP 3-way handshake, HTTP vs HTTPS traffic analysis |
+| 2 | [Linux Log Investigation](labs/lab02-linux-log-investigation/README.md) | Core objectives complete | Log fundamentals, `grep`/`tail`/`less` filtering, real + synthetic SSH brute-force investigation, IR lifecycle |
 
 ## Extra Practice
 
@@ -35,6 +36,9 @@ soc-analyst-journey/
 - OSI model (Layers 2, 3, 4, 7 in particular)
 - MAC addresses vs IP addresses
 - ARP and ARP spoofing (conceptual)
+- Linux log fundamentals (log rotation, centralized/SIEM logging rationale, log line anatomy)
+- Log investigation with `grep`, `tail`, `less`, and `wc -l` (including rate vs. total-count reasoning)
+- Incident Response lifecycle and defense in depth
 
 ## A Note on Honesty
 
@@ -42,4 +46,4 @@ This repo will move slowly at times, and that's intentional. I'd rather document
 
 ## Contact
 
-Feel free to connect on [LinkedIn] — link to be added.
+Feel free to connect on [LinkedIn](https://www.linkedin.com/in/alexa-alfito-dealova).
