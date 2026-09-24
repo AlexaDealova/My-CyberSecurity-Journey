@@ -1,0 +1,33 @@
+# Day 4 — Security+ Domain 1: General Security Concepts
+
+- **Date:** 2026-09-23
+- **Learning Goal:** Set a concrete certification target (CompTIA Security+) and start mapping study sessions to the exam's official domains, beginning with Domain 1 (General Security Concepts). Also built a 12-week study roadmap through mid-December.
+- **Fundamental Studied:**
+  - **CIA Triad:** Confidentiality, Integrity, Availability — the three properties nearly every security control and every attack maps back to.
+  - **AAA Framework:** Authentication (proving identity), Authorization (what you're allowed to do), Accounting (recording what you did) — mapped directly onto real actions from Lab 2 (SSH login, `sudo`, `auth.log`).
+  - **Non-repudiation:** why individual-level logging (not just "root did X") matters most for high-privilege accounts, tied to a real log line from my own WSL.
+  - **Zero Trust:** "never trust, always verify" vs. perimeter-based security; the mechanism of lateral movement when an already-"trusted" device is compromised.
+  - **Honeypot (deception technology):** how attackers stumble into one (network scanning, deliberately attractive targets, honeytokens), what a defender actually sets up (isolated decoy systems, e.g. Cowrie), and why they're not a perfect trap (skilled attackers can sometimes detect them).
+  - **Physical security controls:** why physical access defeats most digital protections; access control vestibules (mantraps) as a mechanical defense against tailgating; how a physical breach (e.g. a rogue device plugged into the network) surfaces as a digital signal (unrecognized device/MAC address against a known asset baseline).
+  - **Gap analysis:** as-is vs. to-be vs. the gap, applied for real against my own WSL SSH config (`PermitRootLogin`) rather than a hypothetical.
+  - **Change management:** why unreviewed changes are a leading real-world cause of security incidents, and how skipping it risks Availability (not Integrity) — a distinction I initially got wrong and corrected in-session.
+- **Lab Progress:** No new formal lab; extended Lab 2 by actually checking real SSH hardening config on my own WSL instance (see below) rather than assuming it from theory.
+- **Tools Used:** WSL2 (Ubuntu 26.04.1 LTS), `grep` against `/etc/ssh/sshd_config`
+- **Commands Practiced:**
+  - `sudo grep -i "PermitRootLogin" /etc/ssh/sshd_config`
+- **What I Understood:**
+  - CIA Triad and AAA aren't abstract theory — I'd already practiced all of them hands-on in Lab 2 without knowing the formal names.
+  - The difference between a *confirmed* impact (from evidence) and a *potential* impact (from what access would allow) — important for accurate incident reporting.
+  - Root/admin accounts need non-repudiation more than regular accounts specifically because of shared access + high potential damage, not just "root is powerful."
+  - Zero Trust solves a different problem than non-repudiation: it's about not trusting *location* (being inside the network), not about *attributing* actions after the fact.
+  - Checking my own `sshd_config` showed the real setting (`PermitRootLogin` default `prohibit-password`, commented out) was safer than the generic assumption — a real lesson in verifying gap analysis with evidence instead of assuming a textbook default applies everywhere.
+  - `prohibit-password` blocks password-based root brute force but still allows root login via a stolen/leaked SSH key — a different, non-brute-force attack surface with no failed-login trail at all.
+- **What I Found Difficult:**
+  - Initially misclassified "editing a config file" itself as an Integrity issue. Corrected: Integrity is about *unauthorized or unintended* modification — an authorized admin's intentional change isn't a CIA violation by itself; the real risk from skipping change management was an unreviewed change breaking something (Availability).
+  - First answer to "why does a SOC Analyst care about physical security" repeated the general physical-security argument instead of connecting it to log-based detection specifically.
+- **Questions Raised (and resolved during the session):**
+  - How does an attacker actually end up attacking a honeypot without knowing it's fake? → network scanning treats it like any other target; well-built honeypots mimic real systems closely enough that most attackers (especially automated ones) don't verify before exploiting.
+  - Why is `PermitRootLogin prohibit-password` not equivalent to `no`? → it still permits root login via SSH key, which bypasses password brute-force detection entirely (no failed-login trail).
+- **Planning:** Built a 12-week Security+ study roadmap (Sept 23–Dec 14) mapped to all 5 exam domains, with weekly lab checkpoints (vulnerability scanning, firewall rules, extended log monitoring) and a final practice-exam phase before booking the real exam. Later adjusted the plan to integrate the Google Cybersecurity Certificate (Coursera) starting Sept 27 as a parallel, overlapping-content track rather than additional duplicate work.
+- **Evidence Collected:** Terminal screenshot of the real `sshd_config` check on my own WSL.
+- **Next Step:** Short pause (Sept 24–26, busy with other commitments), then resume Sept 27 with the Google Cybersecurity Certificate (2–3 hrs/day) alongside shorter daily sync sessions, continuing toward Security+ Domain 2 (Threats, Vulnerabilities, and Mitigations).
