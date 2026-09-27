@@ -1,0 +1,26 @@
+# Day 5 — Security+ Domain 2: Threats, Vulnerabilities, and Mitigations (Part 1)
+
+- **Date:** 2026-09-27
+- **Learning Goal:** Short, focused session (busy week ahead) starting Domain 2 of the Security+ roadmap — threat actors, social engineering, phishing classification, and core malware types.
+- **Fundamental Studied:**
+  - **Threat actor types & motivation:** nation-state, organized crime, hacktivist, insider threat, script kiddie — and why the risk profile differs by organization (e.g., a small hospital facing organized crime/ransomware due to valuable patient data + pressure to restore uptime quickly).
+  - **Social engineering principles:** Authority, Urgency, Familiarity, Fear — analyzed against a realistic CEO-fraud email scenario. Key insight: an instruction like "don't call me first" isn't just reinforcing urgency, it specifically blocks out-of-band verification (calling a previously-known number), which is the standard real-world defense against this exact attack.
+  - **Phishing classification:** generic phishing vs. spear phishing vs. whaling vs. vishing/smishing vs. Business Email Compromise (BEC)/CEO Fraud — correctly distinguished the CEO-email scenario as BEC (employee is the victim, executive identity is impersonated), not whaling (where the executive would be the victim).
+  - **Malware types (part 1):** Virus (needs a host file + human action to spread) vs. Worm (self-replicates over a network with no human action needed — no human bottleneck, so spread is exponential) vs. Trojan (disguised as legitimate software, doesn't self-replicate).
+  - **Ransomware (double extortion):** modern ransomware exfiltrates data before encrypting, so even a victim with good backups still faces a second threat (public data leak) — directly relevant to why healthcare is a high-value target.
+  - **Rootkit:** designed to maintain privileged access while hiding itself from the OS's own reporting (kernel-level control means it can lie to tools like `ps`/`ls`). Connected directly back to Lab 2: local log files (`auth.log`) can't be fully trusted to detect a rootkit either, since a rootkit with root/kernel access can control the very process that writes those logs — same integrity/tamper problem that motivates centralized/SIEM logging. Better detection approaches: off-host log forwarding done before compromise, or booting from a trusted external OS to inspect the disk independently of the (possibly lying) infected OS.
+- **Lab Progress:** No new lab this session — pure concept/quiz session, deliberately short.
+- **Tools Used:** None (conceptual session).
+- **What I Understood:**
+  - Social engineering defenses center on verifying through an independent, previously-established channel — not the contact info given in the suspicious message itself.
+  - The correct way to classify an attack (BEC vs. whaling) depends on identifying who the actual victim is, not just who is being impersonated.
+  - Worm vs. virus/trojan spread speed differs because of the presence or absence of a human-action bottleneck, not just "goes over the network."
+  - Detection tools become untrustworthy once an attacker controls the same layer the tool relies on — the same principle that motivates SIEM/off-host logging applies to rootkit detection.
+- **What I Found Difficult:**
+  - First instinct for rootkit detection was checking `auth.log` locally — didn't immediately connect that a rootkit with root/kernel access could tamper with or suppress its own log entries, the same integrity concern already learned in Lab 2.
+- **Questions Raised (and resolved during the session):**
+  - Why is "don't call me first" the most dangerous part of a CEO-fraud email? → it specifically blocks out-of-band verification, the standard defense that would otherwise expose the scam immediately.
+  - Why can't local log files be fully trusted to catch a rootkit? → the rootkit may control the same OS-level process responsible for writing those logs.
+- **Planning note:** This week is unusually busy with limited/no study time. The 12-week Security+ roadmap (in the study-plan doc) needs a schedule adjustment — deferred to a future session rather than resolved today.
+- **Evidence Collected:** None (conceptual session, no hands-on commands run).
+- **Next Step:** Resolve the schedule slip in the study roadmap, then continue Domain 2 (vulnerability types, indicators of compromise, mitigation techniques) whenever time allows again.
