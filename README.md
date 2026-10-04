@@ -44,7 +44,7 @@ soc-analyst-journey/
 
 ## A Note on Honesty
 
-This repo will move slowly at times, and that's intentional. I'd rather document real, verified progress than inflate it. If a lab folder says "in progress," it means exactly that, i take a rest for 1 week for a big business, so from now on 10 Oct 2026, i will start to grind over again.
+This repo will move slowly at times, and that's intentional. I'd rather document real, verified progress than inflate it. If a lab folder says "in progress," it means exactly that, i take a rest for 1 week for a big business, so from now on 4 Oct 2026, i will start to grind over again.
 
 ## Contact
 
