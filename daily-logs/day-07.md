@@ -1,0 +1,22 @@
+# Day 7 — Google Cybersecurity Certificate: Course 1, Modules 1–3
+
+- **Date:** 2026-10-05
+- **Learning Goal:** Start the Google Cybersecurity Certificate (Coursera) and work through Course 1 (*Foundations of Cybersecurity*), Modules 1–3, in parallel with the CompTIA Security+ roadmap.
+- **Fundamental Studied:**
+  - **Module 1 — Intro to cybersecurity:** the role of an entry-level security analyst, common terminology, and a phishing-spotting practice assignment.
+  - **Module 2 — Attacks and attackers:** attack categories covered by the course: malware (including viruses), password attacks, cryptographic attacks, physical attacks, supply-chain attacks, and social engineering in several forms (phishing, spear phishing, vishing, Business Email Compromise, social media phishing, watering hole, USB baiting, physical social engineering).
+  - **Module 3 — Protecting against threats, risks, and vulnerabilities:** the CIA triad, security frameworks and controls (NIST CSF), security governance and compliance, security ethics, and privacy protection (HIPAA, PHI, SPII).
+- **Lab Progress:** No hands-on lab this session (course modules and quizzes only).
+- **Tools Used:** Coursera (Google Cybersecurity Certificate).
+- **What I Understood:**
+  - Policies apply to everyone, including managers and executives. Even a CEO can't legitimately instruct someone to hand over employee data in violation of policy. Seniority doesn't override security governance or ethics.
+  - Several terms in this course overlap with material I had already studied in earlier Security+ sessions (Day 4–5): the CIA triad, phishing types, spear phishing, vishing, BEC, and general social engineering. Seeing them again under the course's wording is useful practice for translating between sources.
+- **Terms Encountered for the First Time (not yet practiced or quizzed):** watering hole attack, USB baiting, supply-chain attack, adversarial AI, cryptographic attack, SPII / PHI / HIPAA, NIST Cybersecurity Framework, security governance. I'll quiz myself on these before claiming I know them.
+- **What I Found Difficult:**
+  - In a mentor check, I first classified email-attachment malware as a worm only because "it spreads." That doesn't separate worms from viruses, since both spread. The better discriminator is whether human action is needed to spread, and some malware needs a human at the start but spreads on its own afterwards. I'm still working through that hybrid case.
+  - A retrieval check on the history of major past attacks (Module 2) is still pending. I'll complete it next session rather than assume I know it.
+- **Questions Raised:**
+  - How does "policy applies to everyone, including the CEO" connect to the authority principle in CEO-fraud attacks (Day 5)?
+  - For malware that needs a human to open it but then spreads by itself, which part decides its classification?
+- **Evidence Collected:** None added yet (Coursera progress screenshot could be added).
+- **Next Step:** Complete the past-attacks retrieval check, quiz myself on the new terms above, then continue Course 1 and sync with Security+ Domain 2 (vulnerability types, zero-days, indicators of compromise).

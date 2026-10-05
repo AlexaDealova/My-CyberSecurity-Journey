@@ -41,6 +41,7 @@ soc-analyst-journey/
 - Incident Response lifecycle and defense in depth
 - Security+ Domain 1 (General Security Concepts): CIA Triad, AAA, non-repudiation, Zero Trust, honeypots/deception technology, physical security controls, gap analysis, change management
 - Security+ Domain 2 (Threats, Vulnerabilities, and Mitigations) — in progress: threat actor types, social engineering principles, phishing/BEC classification, malware types (virus, worm, trojan, ransomware, rootkit)
+- Google Cybersecurity Certificate — Course 1 (Foundations of Cybersecurity), Modules 1–3 completed; in progress: attack categories, CIA triad, security frameworks/controls, governance and compliance, privacy basics
 
 ## A Note on Honesty
 
