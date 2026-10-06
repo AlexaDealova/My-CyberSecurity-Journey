@@ -1,0 +1,33 @@
+# Day 8 — Google Cybersecurity Certificate: Course 1 Module 4, plus a mentor check on Modules 3–4
+
+- **Date:** 2026-10-06
+- **Learning Goal:** Finish Course 1 (*Foundations of Cybersecurity*) through Module 4, then test whether I can actually explain the Module 3–4 material instead of just passing the quizzes.
+- **Fundamental Studied:**
+  - **Module 3 (review and mentor check):** CIA triad, NIST Cybersecurity Framework, security frameworks vs. controls vs. compliance, and security ethics.
+  - **Module 4 — Cybersecurity tools and programming languages:** logs, SIEM tools (Splunk, Chronicle), playbooks (including chain of custody and protecting/preserving evidence), packet sniffers (tcpdump, Wireshark), and the roles of Linux, SQL, and Python. The module also introduces antivirus software, IDS, encryption, penetration testing, and web vulnerabilities (OWASP Top 10) at an overview level.
+- **Lab Progress:** No new hands-on lab. This session was reading, video, and a Socratic Q&A with my mentor, with scenarios built on what I did in Lab 2.
+- **Tools Used:** Coursera (Google Cybersecurity Certificate). I have only read about SIEM, playbooks, and packet sniffers so far, so I'm not claiming hands-on experience with them.
+- **What I Understood:**
+  - **Encryption protects confidentiality, not integrity.** If an attacker alters ciphertext, decrypting it doesn't prove the data is original. A hash lets me detect changes, because even a one-character change gives a completely different hash. A plain hash isn't enough on its own, though, because an attacker who can change the data can also recompute the hash.
+  - **HMAC vs. digital signature.** HMAC uses one shared secret key, so it gives integrity and authentication between the two key holders, but either holder could have created it, so it can't give non-repudiation. A digital signature hashes the message and signs the hash with a private key. Anyone can verify it with the public key, but only the key owner could have produced it, which is what gives non-repudiation. If an attacker changes the document but copies the original signature, verification fails because the hash of the changed document no longer matches the hash recovered from the signature.
+  - **Passwords are stored as hashes, not as encrypted values.** If the database and the key leak, encrypted passwords can be decrypted, whereas a hash has no reverse. Attackers can still guess by hashing candidate passwords and comparing. (Mentor refinement: length and randomness matter more than odd symbols, since predictable substitutions like `P@ssw0rd!` are already in guess lists.)
+  - **Framework vs. control vs. compliance.** NIST CSF is a voluntary framework (guidance). A password policy on workstations is a security control (a concrete action). HIPAA is a law, so compliance with it is mandatory.
+  - **Right controls for the right asset.** A site storing sensitive personal data needs tighter confidentiality controls than a public news site, but the news site still cares about integrity and availability (defacement, downtime) and about the confidentiality of admin accounts and unpublished drafts. Least privilege limits what a disgruntled employee can reach.
+  - **Logs, SIEM, and a compromised host.** Logs forwarded to a SIEM in real time survive an attacker deleting local logs, but only up to the moment forwarding stops. If a log source suddenly goes silent, that is a signal to investigate, not proof of an attack. Checking whether only one server is silent or all of them separates an isolated cause from a shared one (network or SIEM problem), and checking for scheduled maintenance ties back to change management.
+  - **Brute force followed by a success.** In a scenario of 300 failed SSH logins from one IP and then one success, the success is what makes it serious, because it suggests the guessing may have worked. Roles: the log records what happened, the SIEM raises the alert, the playbook says what to do next, and a packet sniffer shows network traffic. On an SSH session a sniffer can show IPs, ports, timing and volume, but not the encrypted content.
+  - **Handling evidence.** Isolate the server instead of powering it off, because volatile data (running processes, active sessions, open connections) is lost on power-off. Preserve the most volatile data first (order of volatility), work on copies, verify a copy by hashing the original and the copy with the same algorithm and comparing, and document who held the evidence and when (chain of custody) so it can hold up in court or an insurance claim.
+  - **Linux, SQL, Python.** Linux is an open-source operating system (I use it through a command line, e.g. `grep` on `auth.log`). SQL queries databases, which is far faster than reading millions of rows by hand. Python automates repetitive tasks. A one-off check on one file is fine in the Linux shell, while a repetitive task is worth automating.
+- **What I Found Difficult:**
+  - I first believed "encryption protects integrity." The video's simplified wording reinforced it, and I corrected it only after working through what happens to altered ciphertext.
+  - I jumped to certainty twice, e.g. "if the log agent stops, it's 100% an attack." A stopped agent can also be a restart, a network drop, or maintenance. The right wording is "high suspicion, needs verification."
+  - I couldn't recall which fields in an `auth.log` line matter most (which account, which source address, and the result). I need to revisit Lab 2.
+  - Module 4 practice/challenge results (practice 75% and 100%, challenge 91.66%) showed two confusions: mixing up logs and playbooks, and treating Linux as a programming language. Both were correct in the mentor check, but I want to re-test myself later rather than assume they stuck.
+- **Questions Raised:**
+  - How do certificates and PKI tie a public key to a real identity, so "my key was stolen" can't simply be claimed?
+  - What is salting, and why does it matter when two users have the same password?
+- **Evidence Collected:** Coursera grades: Module 3 challenge 97.5%, Module 4 challenge 91.66%. Screenshots can be added if I want them in the repo.
+- **Next Step:**
+  - Re-test myself tomorrow on log vs. playbook and Linux vs. programming language, without notes.
+  - Begin Course 2 (*Play It Safe: Manage Security Risks*).
+  - Still pending from Day 7: the past-attacks retrieval from Module 2, the first-time terms (watering hole, USB baiting, supply-chain attack, SPII/PHI/HIPAA), how "CEO asks for employee data" relates to authority-based social engineering, and the zero-day question.
+  - Revisit the `auth.log` fields from Lab 2.

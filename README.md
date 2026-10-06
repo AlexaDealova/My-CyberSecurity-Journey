@@ -41,11 +41,13 @@ soc-analyst-journey/
 - Incident Response lifecycle and defense in depth
 - Security+ Domain 1 (General Security Concepts): CIA Triad, AAA, non-repudiation, Zero Trust, honeypots/deception technology, physical security controls, gap analysis, change management
 - Security+ Domain 2 (Threats, Vulnerabilities, and Mitigations) — in progress: threat actor types, social engineering principles, phishing/BEC classification, malware types (virus, worm, trojan, ransomware, rootkit)
-- Google Cybersecurity Certificate — Course 1 (Foundations of Cybersecurity), Modules 1–3 completed; in progress: attack categories, CIA triad, security frameworks/controls, governance and compliance, privacy basics
+- Google Cybersecurity Certificate — Course 1 (Foundations of Cybersecurity), Modules 1–4 completed; covered: attack categories, CIA triad, security frameworks/controls, governance and compliance, privacy basics, and an overview of security tools (SIEM, playbooks, packet sniffers) and the roles of Linux, SQL, and Python
+- Cryptography basics (conceptual): hashing, HMAC vs. digital signatures, integrity vs. confidentiality, non-repudiation
+- Digital evidence handling (conceptual): order of volatility, containment vs. shutdown, chain of custody, hash verification of evidence copies
 
 ## A Note on Honesty
 
-This repo will move slowly at times, and that's intentional. I'd rather document real, verified progress than inflate it. If a lab folder says "in progress," it means exactly that, i take a rest for 1 week for a big business, so from now on 4 Oct 2026, i will start to grind over again.
+This repo will move slowly at times, and that's intentional. I'd rather document real, verified progress than inflate it. If a lab folder says "in progress," it means exactly that.
 
 ## Contact
 
