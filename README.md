@@ -37,7 +37,7 @@ soc-analyst-journey/
 - MAC addresses vs IP addresses
 - ARP and ARP spoofing (conceptual)
 - Linux log fundamentals (log rotation, centralized/SIEM logging rationale, log line anatomy)
-- Log investigation with `grep`, `tail`, `less`, and `wc -l` (including rate vs. total-count reasoning)
+- Log investigation with `grep`, `tail`, `less`, and `wc -l` (including rate vs. total-count reasoning).
 - Incident Response lifecycle and defense in depth
 - Security+ Domain 1 (General Security Concepts): CIA Triad, AAA, non-repudiation, Zero Trust, honeypots/deception technology, physical security controls, gap analysis, change management
 - Security+ Domain 2 (Threats, Vulnerabilities, and Mitigations) — in progress: threat actor types, social engineering principles, phishing/BEC classification, malware types (virus, worm, trojan, ransomware, rootkit)
