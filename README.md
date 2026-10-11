@@ -44,6 +44,8 @@ soc-analyst-journey/
 - Google Cybersecurity Certificate — Course 1 (Foundations of Cybersecurity), Modules 1–4 completed; covered: attack categories, CIA triad, security frameworks/controls, governance and compliance, privacy basics, and an overview of security tools (SIEM, playbooks, packet sniffers) and the roles of Linux, SQL, and Python
 - Cryptography basics (conceptual): hashing, HMAC vs. digital signatures, integrity vs. confidentiality, non-repudiation
 - Digital evidence handling (conceptual): order of volatility, containment vs. shutdown, chain of custody, hash verification of evidence copies
+- Google Cybersecurity Certificate — Course 2 (Play It Safe: Manage Security Risks), Modules 1–2 completed; covered: CIA triad, NIST frameworks, OWASP security principles, and security audits
+- Security principles (conceptual): separation of duties vs. least privilege, why separation of duties doesn't stop collusion, and how audits detect fraud after prevention fails
 
 ## A Note on Honesty
 

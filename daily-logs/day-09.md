@@ -1,0 +1,27 @@
+# Day 9 — Google Cybersecurity Certificate: Course 2 (Play It Safe: Manage Security Risks), through Module 2
+
+- **Date:** 2026-10-11
+- **Learning Goal:** Work through Course 2 up to Module 2, then check whether I can explain the security principles from Module 2 with a concrete scenario instead of only naming them.
+- **Fundamental Studied:**
+  - **Course 2, through Module 2.** Topics I covered: the CIA triad, NIST frameworks, OWASP security principles, and security audits.
+  - **Tested in a mentor check today:** OWASP security principles (separation of duties, least privilege) and security audits, using a fictional vendor-payment fraud scenario.
+  - **Not yet tested:** the CIA triad in the Course 2 context, and NIST frameworks. I have watched and read them, but I haven't yet had to explain them in my own words, so I'm not claiming I've mastered them.
+- **Lab Progress:** No new hands-on lab. This session was video, reading, and a Socratic Q&A with my mentor.
+- **Tools Used:** Coursera (Google Cybersecurity Certificate). No new hands-on tools.
+- **What I Understood:**
+  - **Separation of duties.** In the scenario, one finance employee could both create a new vendor and approve payments to it. That lets one person run the whole fraud from start to finish with nobody else's approval needed. The fix is to change the process so that no single person controls both steps (for example, one person registers vendors and a different person approves payments).
+  - **Separation of duties does not stop collusion.** If employee A creates a fictitious vendor and employee B knowingly approves the payment, every step is still "done by the right person" and the transaction passes. Splitting duties raises the cost of fraud (two people must cooperate) but doesn't make it impossible.
+  - **Least privilege and separation of duties solve different problems.** Restricting the employee to the finance system only (least privilege) limits *how much* they can reach. It doesn't fix the problem inside the finance system, where they still hold both steps. Least privilege still helps here: an employee whose job is entering vendor data shouldn't have the right to approve payments or change security settings, which shrinks what a misused account can do. It works best combined with separation of duties and audits.
+  - **Security audits catch what prevention missed.** An auditor reviewing the scenario would look for concrete red flags: (1) a vendor whose address matches the home address of the employee who registered it; (2) the same pair of employees registering a vendor and approving a large payment minutes apart, repeatedly, without adequate verification; (3) a new vendor receiving a large payment right after registration with no contract, purchase order, or proof that goods or services were received. These are signs to investigate, not proof of fraud.
+  - **Why relying on audits alone is risky.** An audit works after the event. By the time it finds the problem, the money may be gone, evidence harder to trace, and recovery uncertain. Prevention (like separation of duties) and detection (like audits) are meant to work together.
+- **What I Found Difficult:**
+  - My first answers were names and definitions rather than mechanisms: I named the violated principle correctly but needed pushing to explain what, concretely, would change in the process.
+  - For the audit question I first listed *categories of evidence to check* (transactions, vendor identity, activity history, money flow) instead of concrete red flags I'd actually look for. I only got to specific, checkable signs on the second try.
+  - When asked what least privilege restricts *in this scenario*, my first answer was the textbook definition. I only applied it to the scenario after being asked again.
+- **Questions Raised:** None recorded this session.
+- **Evidence Collected:** Coursera quiz and challenge grades for Course 2 Modules 1–2 are not recorded in this log yet. I'll add them once I copy them from Coursera, rather than guess.
+- **Next Step:**
+  - Mentor check on the NIST frameworks (what a framework is for, and how it differs from a control) and on the CIA triad as it appears in Course 2.
+  - Record the Module 1–2 grades in this log.
+  - Continue with Course 2, Module 3.
+  - Still pending from earlier days: re-test log vs. playbook and Linux vs. programming language (Day 8), the past-attacks retrieval from Module 2 of Course 1, the first-time terms (watering hole, USB baiting, supply-chain attack, SPII/PHI/HIPAA), how "CEO asks for employee data" relates to authority-based social engineering, the zero-day question, and the `auth.log` fields from Lab 2.
