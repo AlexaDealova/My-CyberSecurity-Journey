@@ -1,0 +1,25 @@
+# Day 10 — Google Cybersecurity Certificate: finished Course 2 (Play It Safe: Manage Security Risks)
+
+- **Date:** 2026-10-12
+- **Learning Goal:** Finish Course 2 (Modules 3 and 4), then check whether I can explain frameworks vs. controls and map a control to the CIA triad using my own example.
+- **Fundamental Studied:**
+  - **Module 3 — Introduction to cybersecurity tools** and **Module 4 — Use playbooks to respond to incidents.** I completed both modules today. I have not yet written up what each module covered in my own words, so I'm only recording the module titles here and not claiming anything beyond them.
+  - **Mentor check today (on Module 2 material):** frameworks vs. controls, and mapping controls to the CIA triad, using a fictional clinic that stores patient records on one server.
+- **Lab Progress:** No new hands-on lab. This session was video, reading, quizzes, and a Socratic Q&A with my mentor.
+- **Tools Used:** Coursera (Google Cybersecurity Certificate). No new hands-on tools.
+- **What I Understood:**
+  - **A framework is not a guarantee of security.** A framework such as NIST is for managing cybersecurity risk. Saying "we use NIST, so we're safe" is wrong, because a framework doesn't secure a server by itself.
+  - **A control is a concrete action that reduces a risk.**
+  - **MFA protects confidentiality.** Example: a clinic requires multi-factor authentication for all staff logging in to the patient-records server. Without MFA, an attacker who steals a doctor's password could log in and read patient records, which breaks confidentiality. With MFA, the attacker must also pass a second factor. This is not absolute protection: if the attacker also takes over the second factor, access is still possible. (Note: my mentor suggested MFA as an example in a hint, so the mechanism is mine, but the choice of control was not.)
+  - **Automated off-site backups protect availability.** This was my own second example. If there is no backup and the main server suffers hardware failure or ransomware, the clinic can lose access to patient records, and doctors may be unable to see medical history when they need it. That breaks availability.
+- **What I Found Difficult:**
+  - My first answer to the framework/control question stayed abstract: I gave definitions but no concrete example and no CIA mapping until I was asked again.
+  - I haven't yet been able to say what a framework such as NIST CSF actually gives an organization in concrete form (what a clinic director would have in hand after reading it). I skipped that question twice, so I'm recording it as an open gap instead of guessing.
+  - I haven't yet explained Modules 3 and 4 in my own words, so I can't say whether they stuck.
+- **Questions Raised:** One open question from my mentor, not yet answered: if the backup is stored on a drive connected to the same network and ransomware gets in, what could happen to the backup, and what does that mean for the claim that the data can be recovered?
+- **Evidence Collected:** Coursera course completion page and certificate for Play It Safe: Manage Security Risks. Completed October 12, 2026, grade 91.68%, about 9 hours (this is Coursera's own estimate for the course, not my measured study time). Quiz and challenge grades per module are not recorded in this log yet.
+- **Next Step:**
+  - Be able to explain what NIST CSF gives an organization in concrete terms, and answer the backup follow-up.
+  - Explain Modules 3 and 4 in my own words (tools overview, playbooks and incident response) before moving on.
+  - Start Course 3 (*Connect and Protect: Networks and Network Security*).
+  - Still pending from earlier days: re-test log vs. playbook and Linux vs. programming language (Day 8), the past-attacks retrieval from Module 2 of Course 1, the first-time terms (watering hole, USB baiting, supply-chain attack, SPII/PHI/HIPAA), how "CEO asks for employee data" relates to authority-based social engineering, the zero-day question, and the `auth.log` fields from Lab 2.

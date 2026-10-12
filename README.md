@@ -37,17 +37,16 @@ soc-analyst-journey/
 - MAC addresses vs IP addresses
 - ARP and ARP spoofing (conceptual)
 - Linux log fundamentals (log rotation, centralized/SIEM logging rationale, log line anatomy)
-- Log investigation with `grep`, `tail`, `less`, and `wc -l` (including rate vs. total-count reasoning).
+- Log investigation with `grep`, `tail`, `less`, and `wc -l` (including rate vs. total-count reasoning)
 - Incident Response lifecycle and defense in depth
 - Security+ Domain 1 (General Security Concepts): CIA Triad, AAA, non-repudiation, Zero Trust, honeypots/deception technology, physical security controls, gap analysis, change management
 - Security+ Domain 2 (Threats, Vulnerabilities, and Mitigations) — in progress: threat actor types, social engineering principles, phishing/BEC classification, malware types (virus, worm, trojan, ransomware, rootkit)
 - Google Cybersecurity Certificate — Course 1 (Foundations of Cybersecurity), Modules 1–4 completed; covered: attack categories, CIA triad, security frameworks/controls, governance and compliance, privacy basics, and an overview of security tools (SIEM, playbooks, packet sniffers) and the roles of Linux, SQL, and Python
 - Cryptography basics (conceptual): hashing, HMAC vs. digital signatures, integrity vs. confidentiality, non-repudiation
 - Digital evidence handling (conceptual): order of volatility, containment vs. shutdown, chain of custody, hash verification of evidence copies
-- Google Cybersecurity Certificate — Course 2 (Play It Safe: Manage Security Risks), Modules 1–2 completed; covered: CIA triad, NIST frameworks, OWASP security principles, and security audits
+- Google Cybersecurity Certificate — Course 2 (Play It Safe: Manage Security Risks) completed (Oct 12, 2026); modules: security risks and domains, frameworks and controls (CIA triad, NIST, OWASP principles, audits), introduction to cybersecurity tools, and using playbooks to respond to incidents
 - Security principles (conceptual): separation of duties vs. least privilege, why separation of duties doesn't stop collusion, and how audits detect fraud after prevention fails
-- Digital evidence handling (conceptual): order of volatility, containment vs. shutdown, chain of custody, hash verification of evidence copies.
-
+- Frameworks vs. controls (conceptual): a framework is guidance and not a guarantee, and a control is a concrete action; mapping controls to the CIA triad (MFA for confidentiality, off-site backups for availability)
 
 ## A Note on Honesty
 
