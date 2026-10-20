@@ -1,0 +1,29 @@
+# Day 11 — Google Cybersecurity Certificate: finished Course 3 (Connect and Protect: Networks and Network Security)
+
+- **Date:** 2026-10-20 (reported completion date; I did not record the exact study days for Course 3)
+- **Learning Goal:** Finish Course 3, then check whether I can explain how network intrusions like SYN flooding and IP spoofing work, using the TCP handshake from Lab 1.
+- **Fundamental Studied:** Course 3 has four modules. The list below comes from the official Coursera syllabus; I have not yet written up each module in my own words.
+  - **Module 1 — Network Architecture:** network types and components, network diagrams, cloud and software-defined networks, the TCP/IP and OSI models, IP addressing.
+  - **Module 2 — Network Operations:** common network and wireless protocols, firewalls, VPNs, security zones, proxy servers, subnetting and CIDR.
+  - **Module 3 — Secure Against Network Intrusions:** denial-of-service attacks, malicious packet sniffing, IP spoofing, interception tactics, reading tcpdump logs.
+  - **Module 4 — Security Hardening:** OS and network hardening, brute-force defenses, cloud network security, using the NIST Cybersecurity Framework to respond to an incident.
+  - **Mentor check today:** SYN flood and IP spoofing, built on the 3-way handshake from Lab 1.
+- **Lab Progress:** No new hands-on lab. I have read about tcpdump log reading, firewalls, and VPNs but have not practiced them, so I'm not claiming hands-on skill.
+- **Tools Used:** Coursera (Google Cybersecurity Certificate). No new hands-on tools.
+- **What I Understood:**
+  - **SYN flood.** The server receives many SYN packets and answers each with SYN-ACK, but the final ACK never arrives. The queue of half-open connections fills up, so normal visitors can't get a connection processed and the site becomes unreachable.
+  - **Many source addresses make blocking harder.** If the attack comes from many IPs, blocking one IP is not enough because the attacker can keep sending from others.
+  - **IP spoofing.** The SYN packets can carry a forged source address. The server sends its SYN-ACK to that forged address, not to the real attacker, so the address the server sees is not a reliable identity of the attacker, and "block the attacker's IP" becomes unreliable.
+  - **Note on how I got here:** I brainstormed parts of these answers with another AI tool before writing them. I want to re-explain them without any help before treating them as mine.
+- **What I Found Difficult:**
+  - I haven't answered who owns a spoofed address, what happens to that owner when SYN-ACK packets flow to it, and what the risk is of blocking that address. That is a gap in my reasoning, not just a missing sentence.
+  - NIST CSF is used in Module 4 of this course, and I still can't explain in concrete terms what it gives an organization. This gap is carried over from Day 10.
+  - I haven't yet explained the other modules (firewalls, VPNs, subnetting, hardening) in my own words, so I can't say whether they stuck.
+- **Questions Raised:** Two open questions from my mentor, both unanswered: (1) who is the owner of a spoofed address and what is the consequence of blocking it; (2) if backups sit on a drive connected to the same network and ransomware gets in, what happens to the backups?
+- **Evidence Collected:** I finished Course 3. My grade, the completion date on Coursera, and the certificate are not recorded in this log yet; I will add them from the Coursera completion page rather than guess.
+- **Next Step:**
+  - Re-explain SYN flood and IP spoofing unaided, and answer the spoofed-address question.
+  - Be able to explain what NIST CSF gives an organization.
+  - Explain Modules 1, 2, and 4 in my own words (at least firewalls vs. VPNs, and what hardening means).
+  - Start Course 4 (*Tools of the Trade: Linux and SQL*).
+  - Still pending from earlier days: re-test log vs. playbook and Linux vs. programming language (Day 8), the past-attacks retrieval from Module 2 of Course 1, the first-time terms (watering hole, USB baiting, supply-chain attack, SPII/PHI/HIPAA), how "CEO asks for employee data" relates to authority-based social engineering, the zero-day question, and the `auth.log` fields from Lab 2.
